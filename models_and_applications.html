@@ -37,9 +37,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -225,6 +228,16 @@
      Problem 1 - Product Mix
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-production-and-inventory">
+     Problem 2 - Production and Inventory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3-personnel-scheduling">
+     Problem 3 - Personnel Scheduling
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -255,6 +268,16 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#problem-1-product-mix">
      Problem 1 - Product Mix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-production-and-inventory">
+     Problem 2 - Production and Inventory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3-personnel-scheduling">
+     Problem 3 - Personnel Scheduling
     </a>
    </li>
   </ul>
@@ -307,23 +330,23 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss	 Test that logic put in place for deprecation handling of indexs works
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss	 Test that logic put in place for deprecation handling of indexs works
 .	 Testing &#39;indexs&#39; param continues to work for LpVariable.dicts
 	 Testing &#39;indexs&#39; param continues to work for LpVariable.matrix
 .	 Testing &#39;indices&#39; argument works in LpVariable.dicts
 	 Testing &#39;indices&#39; param continues to work for LpVariable.matrix
 .	 Testing invalid status
 .	 Testing continuous LP solution - export dict
-.	 Testing export dict for LP
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.	 Testing export dict for LP
 .	 Testing export dict MIP
 .	 Testing maximize continuous LP solution
 .	 Testing continuous LP solution - export JSON
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.	 Testing continuous LP solution - export solver dict
+.	 Testing continuous LP solution - export solver dict
 .	 Testing continuous LP solution - export solver JSON
 ..	 Testing reading MPS files - binary variable, no constraint names
 .	 Testing reading MPS files - integer variable
@@ -344,37 +367,36 @@
 .	 Testing Long Names
 .	 Testing repeated Names
 .	 Testing zero constraint
-.	 Testing zero objective
-.	 Testing LpVariable (not LpAffineExpression) objective
-.	 Testing Long lines in LP
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.	 Testing LpAffineExpression divide
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.	 Testing zero objective
+.	 Testing LpVariable (not LpAffineExpression) objective
+.	 Testing Long lines in LP
+.	 Testing LpAffineExpression divide
 .	 Testing MIP solution
 .	 Testing MIP solution with floats in objective
 .	 Testing Initial value in MIP solution
 .	 Testing fixing value in MIP solution
 .	 Testing MIP relaxation
-.	 Testing feasibility problem (no objective)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.	 Testing feasibility problem (no objective)
 .	 Testing an infeasible problem
 .	 Testing an integer infeasible problem
 .	 Testing another integer infeasible problem
 .	 Testing column based modelling
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>..	 Testing dual variables and slacks reporting
+..	 Testing dual variables and slacks reporting
 ...	 Testing fractional constraints
 .	 Testing elastic constraints (no change)
 .	 Testing elastic constraints (freebound)
-.	 Testing elastic constraints (penalty unchanged)
-.	 Testing elastic constraints (penalty unbounded)
-.	 Testing timeLimit argument
-...ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.	 Testing elastic constraints (penalty unchanged)
+.	 Testing elastic constraints (penalty unbounded)
+.	 Testing timeLimit argument
+...ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
 ----------------------------------------------------------------------
-Ran 840 tests in 11.464s
+Ran 840 tests in 12.102s
 
 OK (skipped=784)
 </pre></div>
@@ -434,6 +456,118 @@ OK (skipped=784)
 </div>
 </div>
 <p>From the output, of <code class="docutils literal notranslate"><span class="pre">opt.x</span></code> for x1 = 884.2 and x2 = 189.4, we have an optimum of £789,473. These figures could be rounded down and used as a starting point.</p>
+</div>
+<div class="section" id="problem-2-production-and-inventory">
+<h3>Problem 2 - Production and Inventory<a class="headerlink" href="#problem-2-production-and-inventory" title="Permalink to this headline">¶</a></h3>
+<p>Story: Over next 4 days, a product needs to be made to the following quantities ready for orders: 100, 150, 200 &amp; 170.
+Production costs for each day are: £9, £12, £10, £12. Products can be made
+and stored for another day. This is an inventory cost of £1/day</p>
+<ul class="simple">
+<li><p>Objective: Minimise costs while meeting target outputs for a product.</p></li>
+<li><p>ending inventory (t) =  beginning inventory(t) + production(t) - sales(t), t -&gt; the nth day in the scenario.</p></li>
+<li><p>x -&gt; production quantity as day start, y -&gt; ending inventory</p></li>
+<li><p>Objective function: <code class="docutils literal notranslate"><span class="pre">9x1</span> <span class="pre">+</span> <span class="pre">12x2</span> <span class="pre">+</span> <span class="pre">10x3</span> <span class="pre">+</span> <span class="pre">12x4</span> <span class="pre">+</span> <span class="pre">y1</span> <span class="pre">+</span> <span class="pre">y2</span> <span class="pre">+</span> <span class="pre">y3</span> <span class="pre">+</span> <span class="pre">y4</span></code></p></li>
+</ul>
+<p>System of equations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                       <span class="o">*</span><span class="n">sales</span><span class="o">*</span> 
+             <span class="o">+</span>    <span class="n">x1</span>  <span class="o">-</span>  <span class="mi">100</span> <span class="o">=</span> <span class="n">y1</span> 
+          <span class="n">y1</span> <span class="o">+</span>    <span class="n">x2</span>  <span class="o">-</span>  <span class="mi">150</span> <span class="o">=</span> <span class="n">y2</span>  
+          <span class="n">y2</span> <span class="o">+</span>    <span class="n">x3</span>  <span class="o">-</span>  <span class="mi">200</span> <span class="o">=</span> <span class="n">y3</span>  
+          <span class="n">y3</span> <span class="o">+</span>    <span class="n">x4</span>  <span class="o">-</span>  <span class="mi">170</span> <span class="o">=</span> <span class="n">y4</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">y1,</span> <span class="pre">y2,</span> <span class="pre">y3</span> <span class="pre">and</span> <span class="pre">y4</span> <span class="pre">must</span> <span class="pre">all</span> <span class="pre">be</span> <span class="pre">&gt;=</span> <span class="pre">0.</span> <span class="pre">Because</span> <span class="pre">we</span> <span class="pre">must</span> <span class="pre">at</span> <span class="pre">least</span> <span class="pre">fulfill</span> <span class="pre">orders.</span></code></p>
+</div>
+<div class="section" id="problem-3-personnel-scheduling">
+<h3>Problem 3 - Personnel Scheduling<a class="headerlink" href="#problem-3-personnel-scheduling" title="Permalink to this headline">¶</a></h3>
+<p>Story: Over next 5 days, need to have employees in store. Everyone works 5 days and then rests for 2.</p>
+<ul class="simple">
+<li><p>Objective: Minimise number of hired employees</p></li>
+<li><p>Demand for each day:</p></li>
+<li><p>M -&gt; 110, T -&gt; 80, W -&gt; 150, T -&gt; 30, F -&gt; 70, S -&gt; 160, S -&gt; 120,</p></li>
+</ul>
+<p>System of equations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">min</span><span class="p">:</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">x3</span> <span class="o">+</span> <span class="n">x4</span> <span class="o">+</span> <span class="n">x5</span> <span class="o">+</span> <span class="n">x6</span> <span class="o">+</span> <span class="n">x7</span><span class="o">.</span> 
+   <span class="n">where</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">of</span> <span class="n">employess</span> <span class="n">that</span> <span class="n">start</span> <span class="n">on</span> <span class="n">day</span> <span class="n">i</span> <span class="k">for</span> <span class="mi">5</span> <span class="n">days</span><span class="o">.</span>
+
+<span class="n">Constraints</span><span class="p">:</span>
+<span class="n">x1</span> <span class="o">+</span> <span class="n">x4</span> <span class="o">+</span> <span class="n">x5</span> <span class="o">+</span> <span class="n">x6</span> <span class="o">+</span> <span class="n">x7</span> <span class="o">&gt;=</span> <span class="mi">110</span> <span class="c1"># Monday&#39;s requirement</span>
+<span class="n">x2</span> <span class="o">+</span> <span class="n">x5</span> <span class="o">+</span> <span class="n">x6</span> <span class="o">+</span> <span class="n">x7</span> <span class="o">+</span> <span class="n">x1</span> <span class="o">&gt;=</span>  <span class="mi">80</span> <span class="c1"># Tuesday&#39;s requirement</span>
+<span class="n">x3</span> <span class="o">+</span> <span class="n">x6</span> <span class="o">+</span> <span class="n">x7</span> <span class="o">+</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span> <span class="o">&gt;=</span> <span class="mi">150</span> <span class="c1"># Wednesday&#39;s requirement</span>
+<span class="n">x4</span> <span class="o">+</span> <span class="n">x7</span> <span class="o">+</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">x3</span> <span class="o">&gt;=</span>  <span class="mi">30</span> <span class="c1"># Thursday&#39;s requirement</span>
+<span class="n">x5</span> <span class="o">+</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">x3</span> <span class="o">+</span> <span class="n">x4</span> <span class="o">&gt;=</span>  <span class="mi">70</span> <span class="c1"># Friday&#39;s requirement</span>
+<span class="n">x6</span> <span class="o">+</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">x3</span> <span class="o">+</span> <span class="n">x4</span> <span class="o">+</span> <span class="n">x5</span> <span class="o">&gt;=</span> <span class="mi">160</span> <span class="c1"># Saturday&#39;s requirement</span>
+<span class="n">x7</span> <span class="o">+</span> <span class="n">x3</span> <span class="o">+</span> <span class="n">x4</span> <span class="o">+</span> <span class="n">x5</span> <span class="o">+</span> <span class="n">x6</span> <span class="o">&gt;=</span> <span class="mi">120</span> <span class="c1"># Sunday&#39;s requirement</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obj_3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">lhs_ineq_3</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="n">rhs_ineq_3</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">-</span><span class="mi">110</span><span class="p">,</span>
+    <span class="o">-</span><span class="mi">80</span><span class="p">,</span>
+    <span class="o">-</span><span class="mi">150</span><span class="p">,</span>
+    <span class="o">-</span><span class="mi">30</span><span class="p">,</span>
+    <span class="o">-</span><span class="mi">70</span><span class="p">,</span>
+    <span class="o">-</span><span class="mi">160</span><span class="p">,</span>
+    <span class="o">-</span><span class="mi">120</span>
+<span class="p">]</span>
+<span class="n">bnd_3</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)),</span>  <span class="c1"># Bounds of x1</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)),</span>  <span class="c1"># Bounds of x2</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)),</span>  <span class="c1"># Bounds of x3</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)),</span>  <span class="c1"># Bounds of x4</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)),</span>  <span class="c1"># Bounds of x5</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)),</span>  <span class="c1"># Bounds of x6</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)),</span>  <span class="c1"># Bounds of x7</span>
+<span class="p">]</span> 
+
+<span class="n">opt_3</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span>
+    <span class="n">c</span><span class="o">=</span><span class="n">obj_3</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="n">lhs_ineq_3</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="n">rhs_ineq_3</span><span class="p">,</span>
+    <span class="c1"># A_eq=lhs_eq, b_eq=rhs_eq, </span>
+    <span class="n">bounds</span><span class="o">=</span><span class="n">bnd_3</span><span class="p">,</span>
+    <span class="n">method</span><span class="o">=</span><span class="s2">&quot;revised simplex&quot;</span><span class="p">)</span>
+
+<span class="n">opt_3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     con: array([], dtype=float64)
+     fun: 163.33333333333331
+ message: &#39;Optimization terminated successfully.&#39;
+     nit: 9
+   slack: array([-1.42108547e-14,  7.00000000e+01,  0.00000000e+00,  2.66666667e+01,
+        0.00000000e+00,  0.00000000e+00, -1.42108547e-14])
+  status: 0
+ success: True
+       x: array([ 3.33333333, 40.        , 13.33333333,  0.        , 13.33333333,
+       93.33333333,  0.        ])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Optimial solution from Monday to Saturday is </span><span class="si">{</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">each</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">opt_3</span><span class="o">.</span><span class="n">x</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimial solution from Monday to Saturday is [&#39;3.3333333333333335&#39;, &#39;40.0&#39;, &#39;13.333333333333334&#39;, &#39;0.0&#39;, &#39;13.333333333333332&#39;, &#39;93.33333333333333&#39;, &#39;0.0&#39;]
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
